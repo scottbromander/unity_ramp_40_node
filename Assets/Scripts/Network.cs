@@ -6,6 +6,8 @@ public class Network : MonoBehaviour {
 
 	static SocketIOComponent socket;
 
+	public GameObject playerPrefab;
+
 	// Use this for initialization
 	void Start () {
 		socket = GetComponent<SocketIOComponent> ();
@@ -20,5 +22,6 @@ public class Network : MonoBehaviour {
 
 	void OnSpawned(SocketIOEvent e){
 		Debug.Log("Spawned!");
+		Instantiate (playerPrefab);
 	}
 }
