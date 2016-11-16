@@ -1,4 +1,13 @@
-var io = require('socket.io')(process.env.PORT || 5000);
+
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+app.set("port", (process.env.PORT || 5000));
+
+http.listen(app.get("port"), function(){
+  console.log("Listening on port: ", app.get("port"));
+});
 
 var playerCount = 0;
 

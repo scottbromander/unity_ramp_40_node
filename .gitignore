@@ -2,3 +2,5 @@ Server/node_modules/
 Temp/
 ProjectSettings/
 .DS_STORE/
+node_modules/
+obj/

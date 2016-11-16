@@ -1,0 +1,24 @@
+{
+  "name": "40_Unity_Node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scottbromander/unity_ramp_40_node.git"
+  },
+  "author": "Scott Bromander",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scottbromander/unity_ramp_40_node/issues"
+  },
+  "homepage": "https://github.com/scottbromander/unity_ramp_40_node"
+}
