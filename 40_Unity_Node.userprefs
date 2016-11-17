@@ -2,7 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Network.cs">
     <Files>
-      <File FileName="Assets/Scripts/Network.cs" Line="9" Column="33" />
+      <File FileName="Assets/Scripts/Network.cs" Line="1" Column="1" />
+      <File FileName="Assets/SocketIO/Scripts/SocketIO/SocketIOComponent.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
