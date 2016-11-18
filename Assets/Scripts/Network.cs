@@ -13,6 +13,7 @@ public class Network : MonoBehaviour {
 		socket = GetComponent<SocketIOComponent> ();
 		socket.On ("open", OnConnected);
 		socket.On ("spawn", OnSpawned);
+		socket.On ("CMS", OnCMSevent);
 	}
 
 	void OnConnected(SocketIOEvent e){
@@ -23,5 +24,9 @@ public class Network : MonoBehaviour {
 	void OnSpawned(SocketIOEvent e){
 		Debug.Log("Spawned!");
 		Instantiate (playerPrefab);
+	}
+
+	void OnCMSevent(SocketIOEvent e){
+		Debug.Log ("CMS EVENT!");
 	}
 }
