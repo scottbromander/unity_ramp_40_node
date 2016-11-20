@@ -14,12 +14,12 @@ app.get("/", function(req,res){
 });
 
 app.get("/first", function(req,res){
-    io.emit('CMS');
+    io.emit('CMS EVENT ONE', { data: "one"});
     res.send("Got it!");
 });
 
 app.get("/second", function(req,res){
-    io.emit('hi', 'all sockets');
+    io.emit('CMS EVENT TWO');
     res.send("Got it!");
 });
 

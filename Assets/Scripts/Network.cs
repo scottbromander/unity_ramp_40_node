@@ -6,6 +6,8 @@ public class Network : MonoBehaviour {
 
 	static SocketIOComponent socket;
 
+	public GameObject masterObject;
+
 	public GameObject playerPrefab;
 
 	// Use this for initialization
@@ -13,7 +15,7 @@ public class Network : MonoBehaviour {
 		socket = GetComponent<SocketIOComponent> ();
 		socket.On ("open", OnConnected);
 		socket.On ("spawn", OnSpawned);
-		socket.On ("CMS", OnCMSevent);
+		socket.On ("CMS EVENT ONE", OnCMSevent);
 	}
 
 	void OnConnected(SocketIOEvent e){
@@ -22,11 +24,12 @@ public class Network : MonoBehaviour {
 	}
 
 	void OnSpawned(SocketIOEvent e){
-		Debug.Log("Spawned!");
-		Instantiate (playerPrefab);
+		Debug.Log ("Spawned!");
 	}
 
 	void OnCMSevent(SocketIOEvent e){
-		Debug.Log ("CMS EVENT!");
+		
+		Debug.Log (e);
+		masterObject.GetComponent<MasterObjectScript> ().ChangeObject ("one");
 	}
 }
