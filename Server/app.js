@@ -14,18 +14,23 @@ app.get("/", function(req,res){
 });
 
 app.get("/first", function(req,res){
-    io.emit('CMS EVENT ONE', { data: "one"});
+    io.emit('CMS EVENT', { data: "one"});
     res.send("Got it!");
 });
 
 app.get("/second", function(req,res){
-    io.emit('CMS EVENT TWO');
+    io.emit('CMS EVENT', { data: "two"});
     res.send("Got it!");
 });
 
 app.get("/third", function(req,res){
-    io.emit('hi', 'all sockets');
+    io.emit('CMS EVENT', { data: "three"});
     res.send("Got it!");
+});
+
+app.get("/speed/:speed", function(req,res){
+    io.emit('CMS SPEED EVENT', { data: req.params.speed});
+    res.send("Got it! " + req.params.speed);
 });
 
 http.listen(app.get("port"), function(){

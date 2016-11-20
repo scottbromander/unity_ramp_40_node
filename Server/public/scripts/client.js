@@ -1,8 +1,26 @@
 $("document").ready(function(){
-    $(".test-one").on("click", postOne);
-    $(".test-two").on("click", postTwo);
-    $(".test-three").on("click", postThree);
+  enable();
 });
+
+function enable(){
+  $(".test-one").on("click", postOne);
+  $(".test-two").on("click", postTwo);
+  $(".test-three").on("click", postThree);
+
+  $(".speed-neg").on("click", changeSpeed);
+  $(".speed-no").on("click", changeSpeed);
+  $(".speed-pos").on("click", changeSpeed);
+}
+
+function changeSpeed(){
+  $.ajax({
+    type: "GET",
+    url: "/speed/" + $(this).data("speed"),
+    success: function(response){
+      console.log(response);
+    }
+  });
+}
 
 function postOne(){
   $.ajax({
