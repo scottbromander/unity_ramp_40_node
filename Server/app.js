@@ -15,7 +15,7 @@ app.get("/", function(req,res){
 
 app.get("/first", function(req,res){
     io.emit('CMS EVENT', { data: "one"});
-    res.send(io);
+    res.send("Got it!");
 });
 
 app.get("/second", function(req,res){
@@ -35,28 +35,20 @@ app.get("/speed/:speed", function(req,res){
 
 http.listen(app.get("port"), function(){
   console.log("Listening on port: ", app.get("port"));
-  console.log("Yerp");
 });
 
 var playerCount = 0;
 
-io.set ( 'transports' , [
-    'websocket'
-  , 'xhr-polling'
-  ] );
-
-
 io.on('connection', function(socket){
     console.log('client connected, broadcasting spawn');
-    socket.emit('open');
-    // io.emit('CMS EVENT', { data: "one"});
-    // socket.broadcast.emit('spawn');
-    // playerCount++;
-    //
-    // for(var i = 0; i < playerCount; i++){
-    //   socket.emit('spawn');
-    //   console.log('sending spawn to new player');
-    // }
+
+    socket.broadcast.emit('spawn');
+    playerCount++;
+
+    for(var i = 0; i < playerCount; i++){
+      socket.emit('spawn');
+      console.log('sending spawn to new player');
+    }
 
     socket.on('move', function(data){
       console.log("Client Moved!");

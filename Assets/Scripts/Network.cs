@@ -21,7 +21,6 @@ public class Network : MonoBehaviour {
 		socket.On ("CMS SPEED EVENT", OnSpeedCMSevent);
 
 		masterObjectScript = masterObject.GetComponent<MasterObjectScript> ();
-		Debug.Log ("Network Start ran");
 	}
 
 	void OnConnected(SocketIOEvent e){
