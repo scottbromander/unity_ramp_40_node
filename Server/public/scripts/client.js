@@ -1,53 +1,87 @@
-$("document").ready(function(){
-  enable();
-});
+var myApp = angular.module("myApp", ['ngMaterial']);
 
-function enable(){
-  $(".test-one").on("click", postOne);
-  $(".test-two").on("click", postTwo);
-  $(".test-three").on("click", postThree);
+myApp.config(['$mdThemingProvider', function($mdThemingProvider){
+    $mdThemingProvider.theme('default')
+        .primaryPalette('blue-grey')
+        .accentPalette('grey');
+}]);
 
-  $(".speed-neg").on("click", changeSpeed);
-  $(".speed-no").on("click", changeSpeed);
-  $(".speed-pos").on("click", changeSpeed);
-}
+myApp.controller("baseController", ["$scope", "$http", function($scope, $http){
+    $scope.postOne = function(){
+      $http.get("/first").then(function(response){
+          console.log("Here: ", response.data);
+      });
+    };
 
-function changeSpeed(){
-  $.ajax({
-    type: "GET",
-    url: "/speed/" + $(this).data("speed"),
-    success: function(response){
-      console.log(response);
+    $scope.postTwo = function(){
+      $http.get("/second").then(function(response){
+          console.log("Here: ", response.data);
+      });
+    };
+
+    $scope.postThree = function(){
+      $http.get("/third").then(function(response){
+          console.log("Here: ", response.data);
+      });
+    };
+
+    $scope.speedAdjust = function(speed){
+      $http.get("/speed/" + speed).then(function(response){
+          console.log("Here: ", response.data);
+      });
     }
-  });
-}
+}]);
 
-function postOne(){
-  $.ajax({
-    type: "GET",
-    url: "/first",
-    success: function(response){
-      console.log(response);
-    }
-  });
-}
-
-function postTwo(){
-  $.ajax({
-    type: "GET",
-    url: "/second",
-    success: function(response){
-      console.log(response);
-    }
-  });
-}
-
-function postThree(){
-  $.ajax({
-    type: "GET",
-    url: "/third",
-    success: function(response){
-      console.log(response);
-    }
-  });
-}
+// $("document").ready(function(){
+//   enable();
+// });
+//
+// function enable(){
+//   $(".test-one").on("click", postOne);
+//   $(".test-two").on("click", postTwo);
+//   $(".test-three").on("click", postThree);
+//
+//   $(".speed-neg").on("click", changeSpeed);
+//   $(".speed-no").on("click", changeSpeed);
+//   $(".speed-pos").on("click", changeSpeed);
+// }
+//
+// function changeSpeed(){
+//   $.ajax({
+//     type: "GET",
+//     url: "/speed/" + $(this).data("speed"),
+//     success: function(response){
+//       console.log(response);
+//     }
+//   });
+// }
+//
+// function postOne(){
+//   $.ajax({
+//     type: "GET",
+//     url: "/first",
+//     success: function(response){
+//       console.log(response);
+//     }
+//   });
+// }
+//
+// function postTwo(){
+//   $.ajax({
+//     type: "GET",
+//     url: "/second",
+//     success: function(response){
+//       console.log(response);
+//     }
+//   });
+// }
+//
+// function postThree(){
+//   $.ajax({
+//     type: "GET",
+//     url: "/third",
+//     success: function(response){
+//       console.log(response);
+//     }
+//   });
+// }

@@ -27,7 +27,7 @@
 
 #endregion
 
-//#define SOCKET_IO_DEBUG			// Uncomment this for debug
+#define SOCKET_IO_DEBUG			// Uncomment this for debug
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -41,7 +41,8 @@ namespace SocketIO
 	public class SocketIOComponent : MonoBehaviour
 	{
 		#region Public Properties
-//				public string url = "ws://blooming-chamber-76501.herokuapp.com:43509/socket.io/?EIO=4&transport=websocket";
+		//https://quiet-fortress-68565.herokuapp.com/
+//		public string url = "ws://quiet-fortress-68565.herokuapp.com:11099/socket.io/?EIO=4&transport=websocket";
 		public string url = "ws://127.0.0.1:5000/socket.io/?EIO=4&transport=websocket";
 		public bool autoConnect = true;
 		public int reconnectDelay = 5;

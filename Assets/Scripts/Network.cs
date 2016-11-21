@@ -19,21 +19,25 @@ public class Network : MonoBehaviour {
 		socket.On ("spawn", OnSpawned);
 		socket.On ("CMS EVENT", OnCMSevent);
 		socket.On ("CMS SPEED EVENT", OnSpeedCMSevent);
-
+		socket.On ("time", debugTime);
 		masterObjectScript = masterObject.GetComponent<MasterObjectScript> ();
 	}
 
+	void debugTime(SocketIOEvent e){
+//		Debug.Log ("Yerp");
+	}
+
 	void OnConnected(SocketIOEvent e){
-		Debug.Log("connected");
+//		Debug.Log("connected");
 		//socket.Emit("move");
 	}
 
 	void OnSpawned(SocketIOEvent e){
-		Debug.Log ("Spawned!");
+//		Debug.Log ("Spawned!");
 	}
 
 	void OnCMSevent(SocketIOEvent e){
-		Debug.Log ("Change Object Event");
+//		Debug.Log ("Change Object Event");
 		var dataString = e.data[0].ToString();
 		dataString = dataString.Replace("\"", "");
 
@@ -41,7 +45,7 @@ public class Network : MonoBehaviour {
 	}
 
 	void OnSpeedCMSevent(SocketIOEvent e){
-		Debug.Log ("Change Speed Event");
+//		Debug.Log ("Change Speed Event");
 		var dataString = e.data[0].ToString();
 		dataString = dataString.Replace("\"", "");
 
