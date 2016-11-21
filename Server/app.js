@@ -40,9 +40,9 @@ http.listen(app.get("port"), function(){
 
 var playerCount = 0;
 
-io.set ( 'Transports' , [ 
-    'Websocket'
-  , 'Xhr-Polling'
+io.set ( 'transports' , [
+    'websocket'
+  , 'xhr-polling'
   ] );
 
 
