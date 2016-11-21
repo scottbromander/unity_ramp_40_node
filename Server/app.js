@@ -48,7 +48,8 @@ io.set ( 'transports' , [
 
 io.on('connection', function(socket){
     console.log('client connected, broadcasting spawn');
-    io.emit('CMS EVENT', { data: "one"});
+    socket.emit('open');
+    // io.emit('CMS EVENT', { data: "one"});
     // socket.broadcast.emit('spawn');
     // playerCount++;
     //

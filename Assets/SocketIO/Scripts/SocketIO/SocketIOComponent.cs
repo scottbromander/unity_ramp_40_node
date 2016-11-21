@@ -41,7 +41,7 @@ namespace SocketIO
 	public class SocketIOComponent : MonoBehaviour
 	{
 		#region Public Properties
-		public string url = "ws://blooming-chamber-76501.herokuapp.com:20979/socket.io/?EIO=4&transport=websocket";
+		public string url = "ws://blooming-chamber-76501.herokuapp.com:55686/socket.io/?EIO=4&transport=websocket";
 		public bool autoConnect = true;
 		public int reconnectDelay = 5;
 		public float ackExpirationTime = 1800f;
