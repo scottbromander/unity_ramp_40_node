@@ -42,8 +42,9 @@ namespace SocketIO
 	{
 		#region Public Properties
 		//https://quiet-fortress-68565.herokuapp.com/
-//		public string url = "ws://quiet-fortress-68565.herokuapp.com:11099/socket.io/?EIO=4&transport=websocket";
-		public string url = "ws://127.0.0.1:5000/socket.io/?EIO=4&transport=websocket";
+		//http://blooming-chamber-76501.herokuapp.com/
+		public string url = "wss://blooming-chamber-76501.herokuapp.com:50997/socket.io/?EIO=4&transport=websocket";
+//		public string url = "ws://127.0.0.1:5000/socket.io/?EIO=4&transport=websocket";
 		public bool autoConnect = true;
 		public int reconnectDelay = 5;
 		public float ackExpirationTime = 1800f;
@@ -92,6 +93,7 @@ namespace SocketIO
 
 		public void Awake()
 		{
+			
 			encoder = new Encoder();
 			decoder = new Decoder();
 			parser = new Parser();
