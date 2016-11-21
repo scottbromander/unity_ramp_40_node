@@ -15,7 +15,7 @@ app.get("/", function(req,res){
 
 app.get("/first", function(req,res){
     io.emit('CMS EVENT', { data: "one"});
-    res.send("Got it!");
+    res.send(io);
 });
 
 app.get("/second", function(req,res){

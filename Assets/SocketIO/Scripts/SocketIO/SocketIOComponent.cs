@@ -41,7 +41,7 @@ namespace SocketIO
 	public class SocketIOComponent : MonoBehaviour
 	{
 		#region Public Properties
-		public string url = "ws://blooming-chamber-76501.herokuapp.com:55686/socket.io/?EIO=4&transport=websocket";
+		public string url = "ws://blooming-chamber-76501.herokuapp.com:20881/socket.io/?EIO=4&transport=websocket";
 		public bool autoConnect = true;
 		public int reconnectDelay = 5;
 		public float ackExpirationTime = 1800f;
@@ -120,7 +120,9 @@ namespace SocketIO
 
 		public void Start()
 		{
-			if (autoConnect) { Connect(); }
+			if (autoConnect) { 
+				Connect(); 
+			}
 		}
 
 		public void Update()
@@ -169,6 +171,7 @@ namespace SocketIO
 		
 		public void Connect()
 		{
+			
 			connected = true;
 
 			socketThread = new Thread(RunSocketThread);
@@ -176,6 +179,8 @@ namespace SocketIO
 
 			pingThread = new Thread(RunPingThread);
 			pingThread.Start(ws);
+
+
 		}
 
 		public void Close()
