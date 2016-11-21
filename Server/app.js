@@ -9,10 +9,7 @@ app.set("port", (process.env.PORT || 5000));
 
 app.use(express.static(path.join(__dirname, './public')));
 
-io.configure(function () {
-  io.set("transports", ["xhr-polling"]);
-  io.set("polling duration", 10);
-});
+
 
 app.get("/", function(req,res){
     res.sendFile(path.join(__dirname, "/public", "/views/index.html"));
