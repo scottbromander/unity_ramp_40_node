@@ -35,6 +35,7 @@ app.get("/speed/:speed", function(req,res){
 
 http.listen(app.get("port"), function(){
   console.log("Listening on port: ", app.get("port"));
+  console.log("Here is the socket info: ", io);
 });
 
 var playerCount = 0;
