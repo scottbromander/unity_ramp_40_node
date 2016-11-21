@@ -40,6 +40,12 @@ http.listen(app.get("port"), function(){
 
 var playerCount = 0;
 
+io.set ( 'Transports' , [ 
+    'Websocket'
+  , 'Xhr-Polling'
+  ] );
+
+
 io.on('connection', function(socket){
     console.log('client connected, broadcasting spawn');
     io.emit('CMS EVENT', { data: "one"});
