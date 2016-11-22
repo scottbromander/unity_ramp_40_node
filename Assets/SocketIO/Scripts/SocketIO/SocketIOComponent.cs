@@ -43,7 +43,7 @@ namespace SocketIO
 		#region Public Properties
 		//https://quiet-fortress-68565.herokuapp.com/
 		//http://blooming-chamber-76501.herokuapp.com/
-		public string url = "wss://blooming-chamber-76501.herokuapp.com:5564/socket.io/?EIO=4&transport=websocket";
+		public string url = "ws://blooming-chamber-76501.herokuapp.com:47960/socket.io/?EIO=4&transport=websocket";
 //		public string url = "ws://127.0.0.1:5000/socket.io/?EIO=4&transport=websocket";
 		public bool autoConnect = true;
 		public int reconnectDelay = 5;
