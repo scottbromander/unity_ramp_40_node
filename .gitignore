@@ -6,3 +6,5 @@ node_modules/
 obj/
 Library/
 Assets/
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj

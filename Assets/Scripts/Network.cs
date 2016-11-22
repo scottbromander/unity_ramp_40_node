@@ -37,7 +37,7 @@ public class Network : MonoBehaviour {
 	}
 
 	void OnCMSevent(SocketIOEvent e){
-//		Debug.Log ("Change Object Event");
+		Debug.Log ("Change Object Event");
 		var dataString = e.data[0].ToString();
 		dataString = dataString.Replace("\"", "");
 

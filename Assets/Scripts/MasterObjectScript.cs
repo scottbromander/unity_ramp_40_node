@@ -7,6 +7,7 @@ public class MasterObjectScript : MonoBehaviour {
 	public GameObject objectTwo;
 	public GameObject objectThree;
 
+
 	private Spin spin;
 
 	private GameObject currentObject = null;
@@ -57,13 +58,13 @@ public class MasterObjectScript : MonoBehaviour {
 	public void ChangeSpeed(string speed){
 		switch (speed) {
 		case "neg":
-			spin.spinSpeed = -10;
+			spin.spinSpeed = -100;
 			break;
 		case "no":
 			spin.spinSpeed = 0;
 			break;
 		case "pos":
-			spin.spinSpeed = 10;
+			spin.spinSpeed = 100;
 			break;
 		}
 	}
