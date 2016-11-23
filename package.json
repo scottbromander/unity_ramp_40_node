@@ -1,6 +1,9 @@
 {
   "name": "40_Unity_Node",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=0.12.0"
+  },
   "description": "",
   "main": "index.js",
   "dependencies": {
