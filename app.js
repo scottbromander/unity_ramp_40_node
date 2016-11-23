@@ -7,11 +7,11 @@ var path = require('path');
 
 app.set("port", (process.env.PORT || 5000));
 
-app.use(express.static(path.join(__dirname, './public')));
+app.use(express.static(path.join(__dirname, './Server/public')));
 
 
 app.get("/", function(req,res){
-    res.sendFile(path.join(__dirname, "/public", "/views/index.html"));
+    res.sendFile(path.join(__dirname, "/Server/public", "/views/index.html"));
 });
 
 app.get("/first", function(req,res){
