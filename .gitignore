@@ -2,7 +2,5 @@ Temp/
 ProjectSettings/
 .DS_STORE/
 obj/
-Library/
-Assets/
 Assembly-CSharp.csproj
 Assembly-CSharp-Editor.csproj
